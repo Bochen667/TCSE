@@ -26,7 +26,7 @@ def analysis_module(module, code, user_input):
     "http://localhost:11434/v1/chat/completions",
     headers={"Content-Type": "application/json"},
     json={
-            "model": "deepseek-r1:7b",
+            "model": "codellama:13b",
             "messages": [ 
                 {
                     "role": "system",
@@ -200,47 +200,8 @@ def conclusion_module(module, code, user_input):
 
     
     reply = response.json().get("choices", [{}])[0].get("message", {}).get("content", "")
-
-    print(reply)
-
     
-    response_json = json.dumps({"reply":reply}, ensure_ascii=False)
-    return Response(response=response_json, status=200, content_type="application/json; charset=utf-8")
-
-def translation(module, code, user_input) :
-    response = requests.post(
-    "http://localhost:11434/v1/chat/completions",
-    headers={"Content-Type": "application/json"},
-    json={
-            "model": "llama3:8b",
-            "messages": [ 
-                {
-                    "role": "system",
-                    "content":  f'''
-                    你是一位專業翻譯員，請你在更動文章內容的情況下進行翻譯，並根據以下【對話內容】檢查所有對話內容確保是正體中文以及台灣用語。
-                    '''
-                },
-                {
-                    "role": "user",
-                    "content":
-                    f'''
-                    language：正體中文
-                    ---
-                    【對話內容】: {user_input}
-                    ---
-                    '''
-                }
-            ]
-        }
-    )
-    
-
-    
-    reply = response.json().get("choices", [{}])[0].get("message", {}).get("content", "")
-
-    print(reply)
-
-    
+    # reply= reply.replace("\n", "<br>").replace("\t", "&emsp;")
     response_json = json.dumps({"reply":reply}, ensure_ascii=False)
     return Response(response=response_json, status=200, content_type="application/json; charset=utf-8")
 
@@ -262,9 +223,6 @@ def manage():
         
     if module == "conclusion":
         return conclusion_module(module, code, user_input)
-    
-    if module == "translation":
-        return translation(module, code, user_input)
         
     else  :
         return jsonify({"error": "Invalid module"}), 400
