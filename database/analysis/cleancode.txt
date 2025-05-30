@@ -1,0 +1,54 @@
+《Clean Code 無瑕的程式碼》
+
+第 1 章：無瑕的程式碼（Meaning of Clean Code）
+乾淨的程式碼應該清楚表達其目的、避免重複、結構良好且易於閱讀與維護。作者強調，好的程式碼讀起來就像是散文，其他人能快速理解並接手維護。寫程式不只是讓機器能執行，更是為了讓人能理解。
+
+範例：避免使用 int d 這種模糊變數，而改為 int elapsedTimeInDays。
+
+第 2 章：有意義的命名（Meaningful Names）
+變數、函式、類別的命名應具描述性，反映其用途與邏輯。避免使用抽象字元、縮寫、泛泛詞（如 data、info），應使用具有意圖導向的名稱。
+
+範例：將 get() 改為 fetchUserProfile()，讓使用者清楚知道函式作用。
+
+第 3 章：函式（Functions）
+好的函式應該短小、只做一件事。若函式名稱無法清楚描述其職責，就應拆分。參數越少越好，並避免使用布林參數（可拆成兩個函式以表達不同邏輯）。
+
+範例：將 save(user, true) 改為 saveWithEmailConfirmation(user)。
+
+第 4 章：註解（Comments）
+註解是輔助理解的手段，而非主要說明方式。當程式碼本身清楚表達邏輯時，不需要過多註解。註解應解釋「為什麼這麼做」，而不是「做了什麼」。
+
+範例（壞）：// 加 1
+好的做法是：// 修正因 API 回傳索引從 0 開始導致的 off-by-one 問題
+
+第 5 章：編排（Formatting）
+排版是一種視覺上的結構設計，能幫助讀者理解程式邏輯。適當使用空行、縮排、區塊分隔可使邏輯更清晰。函式之間要有留白，相關邏輯彼此靠近。
+
+範例：函式內部使用空白行區分「設定參數」、「處理資料」、「回傳結果」等區塊。
+
+第 6 章：物件與資料結構（Objects and Data Structures）
+物件封裝行為與資料，應對外提供操作介面；資料結構則傾向暴露欄位。理解資料導向與物件導向在應用場景的差異，有助於做出正確設計。
+
+範例：如果資料結構是 User，直接存取 user.email；物件導向則使用 user.sendEmail()。
+
+第 7 章：錯誤處理（Error Handling）
+錯誤處理應清晰、簡潔，避免將錯誤邏輯和正常流程混雜。使用例外（exceptions）比返回錯誤碼更具可維護性，並應將錯誤捕捉集中處理。
+
+範例：try { readFile(); } catch (IOException e) { logError(e); }
+避免在每個流程中分別檢查錯誤。
+
+第 8 章：邊界（Boundaries）
+與第三方套件或未知系統互動時，應建立明確的邊界層。使用包裝器（wrappers）、轉接器（adapters）來降低耦合，讓未來替換或測試更容易。
+
+範例：不要直接呼叫第三方 API，而是透過 PaymentGatewayAdapter 中介抽象層來呼叫。
+
+第 9 章：單元測試（Unit Tests）
+測試是乾淨程式碼的基石。測試應快速、可重複、獨立且清晰，命名應反映預期行為。遵循「F.I.R.S.T」原則（Fast、Independent、Repeatable、Self-validating、Timely）。
+
+範例：testTransferMoney_ShouldDecreaseSenderBalance_WhenSuccessful()
+比 test1() 清楚得多。
+
+第 10 章：類別（Classes）
+類別應遵守單一職責原則，專注處理一種職能。類別內部方法應具備內聚性（cohesion），成員變數應服務於該類別主要功能。應用 SOLID 原則使系統更穩固。
+
+範例：將 UserManager 拆成 UserRepository（資料存取）與 UserService（邏輯處理）。
