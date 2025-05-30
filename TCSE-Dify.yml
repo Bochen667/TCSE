@@ -105,18 +105,6 @@ workflow:
     - data:
         isInLoop: false
         sourceType: code
-        targetType: answer
-      id: 17484431847710-source-17483575722160-target
-      selected: false
-      source: '17484431847710'
-      sourceHandle: source
-      target: '17483575722160'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: code
         targetType: http-request
       id: 1748349008690-source-1748345508750-target
       selected: false
@@ -154,20 +142,9 @@ workflow:
     - data:
         isInLoop: false
         sourceType: code
-        targetType: answer
-      id: 17484432926460-source-17483576050410-target
-      selected: false
-      source: '17484432926460'
-      sourceHandle: source
-      target: '17483576050410'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: code
         targetType: http-request
       id: 1748475597599-source-17483576160590-target
+      selected: false
       source: '1748475597599'
       sourceHandle: source
       target: '17483576160590'
@@ -179,6 +156,7 @@ workflow:
         sourceType: tool
         targetType: answer
       id: 1748534631819-source-1748475149102-target
+      selected: false
       source: '1748534631819'
       sourceHandle: source
       target: '1748475149102'
@@ -188,30 +166,9 @@ workflow:
     - data:
         isInLoop: false
         sourceType: answer
-        targetType: code
-      id: 17483575722160-source-1748475597599-target
-      source: '17483575722160'
-      sourceHandle: source
-      target: '1748475597599'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: answer
-        targetType: template-transform
-      id: 17483576050410-source-1748475066115-target
-      source: '17483576050410'
-      sourceHandle: source
-      target: '1748475066115'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: answer
         targetType: tool
       id: 1748475118550-source-1748534631819-target
+      selected: false
       source: '1748475118550'
       sourceHandle: source
       target: '1748534631819'
@@ -220,21 +177,67 @@ workflow:
       zIndex: 0
     - data:
         isInLoop: false
-        sourceType: code
-        targetType: answer
-      id: 1748465439782-source-17483623890880-target
-      source: '1748465439782'
+        sourceType: document-extractor
+        targetType: code
+      id: 1748345469919-source-1748349008690-target
+      selected: false
+      source: '1748345469919'
       sourceHandle: source
-      target: '17483623890880'
+      target: '1748349008690'
       targetHandle: target
       type: custom
       zIndex: 0
     - data:
         isInLoop: false
-        sourceType: answer
+        sourceType: template-transform
         targetType: code
-      id: 17483623890880-source-17484679497620-target
-      source: '17483623890880'
+      id: 1748475066115-source-17486109603930-target
+      source: '1748475066115'
+      sourceHandle: source
+      target: '17486109603930'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 17486109603930-source-17486109832600-target
+      source: '17486109603930'
+      sourceHandle: source
+      target: '17486109832600'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 17486109832600-source-17486110555250-target
+      source: '17486109832600'
+      sourceHandle: source
+      target: '17486110555250'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 17486110555250-source-1748611107877-target
+      source: '17486110555250'
+      sourceHandle: source
+      target: '1748611107877'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1748465439782-source-17484679497620-target
+      source: '1748465439782'
       sourceHandle: source
       target: '17484679497620'
       targetHandle: target
@@ -242,12 +245,23 @@ workflow:
       zIndex: 0
     - data:
         isInLoop: false
-        sourceType: document-extractor
+        sourceType: code
         targetType: code
-      id: 1748345469919-source-1748349008690-target
-      source: '1748345469919'
+      id: 17484431847710-source-1748475597599-target
+      source: '17484431847710'
       sourceHandle: source
-      target: '1748349008690'
+      target: '1748475597599'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: template-transform
+      id: 17484432926460-source-1748475066115-target
+      source: '17484432926460'
+      sourceHandle: source
+      target: '1748475066115'
       targetHandle: target
       type: custom
       zIndex: 0
@@ -278,30 +292,6 @@ workflow:
       positionAbsolute:
         x: 56.269245038193844
         y: 273.2832855792742
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 244
-    - data:
-        answer: 'code文件：
-
-          {{#1748345469919.text#}}
-
-          '
-        desc: ''
-        selected: false
-        title: code文件
-        type: answer
-        variables: []
-      height: 105
-      id: answer
-      position:
-        x: 482.53108574957764
-        y: 552.0532799791707
-      positionAbsolute:
-        x: 482.53108574957764
-        y: 552.0532799791707
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -358,7 +348,7 @@ workflow:
         type: http-request
         url: http://host.docker.internal:4000/manage
         variables: []
-      height: 168
+      height: 138
       id: '1748345508750'
       position:
         x: 996.5885516896276
@@ -424,14 +414,17 @@ workflow:
         selected: false
         ssl_verify: true
         timeout:
+          connect: 300
           max_connect_timeout: 0
           max_read_timeout: 0
           max_write_timeout: 0
+          read: 300
+          write: 299
         title: 製作對話
         type: http-request
         url: http://host.docker.internal:4000/manage
         variables: []
-      height: 168
+      height: 138
       id: '17483575287140'
       position:
         x: 1562.8506504070094
@@ -439,55 +432,6 @@ workflow:
       positionAbsolute:
         x: 1562.8506504070094
         y: 490.4727660215886
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 244
-    - data:
-        answer: '製作對話模組：
-
-          {{#17484431847710.result#}}
-
-
-          '
-        desc: ''
-        selected: false
-        title: 製作對話
-        type: answer
-        variables: []
-      height: 121
-      id: '17483575722160'
-      position:
-        x: 1562.8506504070094
-        y: 989.88682749336
-      positionAbsolute:
-        x: 1562.8506504070094
-        y: 989.88682749336
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 244
-    - data:
-        answer: '結論模組：
-
-          {{#17484432926460.result#}}
-
-          '
-        desc: ''
-        selected: false
-        title: 結論
-        type: answer
-        variables: []
-      height: 121
-      id: '17483576050410'
-      position:
-        x: 2124.5446182492274
-        y: 989.88682749336
-      positionAbsolute:
-        x: 2124.5446182492274
-        y: 989.88682749336
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -522,7 +466,7 @@ workflow:
         type: http-request
         url: http://host.docker.internal:4000/manage
         variables: []
-      height: 168
+      height: 138
       id: '17483576160590'
       position:
         x: 2124.5446182492274
@@ -549,10 +493,10 @@ workflow:
       height: 156
       id: '1748359233558'
       position:
-        x: 465.01864063169836
+        x: 445.49076859674875
         y: -33.979086822736114
       positionAbsolute:
-        x: 465.01864063169836
+        x: 445.49076859674875
         y: -33.979086822736114
       selected: false
       sourcePosition: right
@@ -597,11 +541,11 @@ workflow:
       height: 161
       id: '1748359466506'
       position:
-        x: 1506.9618233679926
-        y: -41.23638033198702
+        x: 1542.5714723729006
+        y: -33.979086822736114
       positionAbsolute:
-        x: 1506.9618233679926
-        y: -41.23638033198702
+        x: 1542.5714723729006
+        y: -33.979086822736114
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -621,43 +565,16 @@ workflow:
       height: 153
       id: '1748359618718'
       position:
-        x: 2091.8877085038525
-        y: -41.23638033198702
+        x: 2093.036406858849
+        y: -33.979086822736114
       positionAbsolute:
-        x: 2091.8877085038525
-        y: -41.23638033198702
+        x: 2093.036406858849
+        y: -33.979086822736114
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom-note
       width: 293
-    - data:
-        answer: '
-
-          分析模組：
-
-          {{#1748465439782.result#}}
-
-
-          '
-        desc: ''
-        selected: false
-        title: 分析code (1)
-        type: answer
-        variables: []
-      height: 121
-      id: '17483623890880'
-      position:
-        x: 1001.394879078166
-        y: 989.88682749336
-      positionAbsolute:
-        x: 1001.394879078166
-        y: 989.88682749336
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 244
     - data:
         code: "import json\n\ndef main(arg1: str) -> dict:\n    # 先解析 JSON 字串成 dict\n\
           \    data = json.loads(arg1)\n    reply = data.get(\"reply\", \"\")\n  \
@@ -819,11 +736,11 @@ workflow:
       height: 102
       id: '1748475118550'
       position:
-        x: 2735.359420703903
-        y: 552.0532799791707
+        x: 3238.292648213624
+        y: 265.3278884421704
       positionAbsolute:
-        x: 2735.359420703903
-        y: 552.0532799791707
+        x: 3238.292648213624
+        y: 265.3278884421704
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -839,12 +756,12 @@ workflow:
       height: 105
       id: '1748475149102'
       position:
-        x: 2735.359420703903
-        y: 1022.0503814332769
+        x: 3233.697854793636
+        y: 793.6008970799422
       positionAbsolute:
-        x: 2735.359420703903
-        y: 1022.0503814332769
-      selected: true
+        x: 3233.697854793636
+        y: 793.6008970799422
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -1056,11 +973,11 @@ workflow:
       height: 116
       id: '1748534631819'
       position:
-        x: 2735.359420703903
-        y: 793.6008970799422
+        x: 3233.697854793636
+        y: 496.8437449251005
       positionAbsolute:
-        x: 2735.359420703903
-        y: 793.6008970799422
+        x: 3233.697854793636
+        y: 496.8437449251005
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -1081,17 +998,142 @@ workflow:
       height: 147
       id: '1748535128074'
       position:
-        x: 2673.9392069654036
-        y: -46.0048638663274
+        x: 2680.8313970953855
+        y: -33.979086822736114
       positionAbsolute:
-        x: 2673.9392069654036
-        y: -46.0048638663274
+        x: 2680.8313970953855
+        y: -33.979086822736114
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom-note
       width: 295
+    - data:
+        code: "\nimport json\ndef main(arg1: str) -> dict:\n    return {\n       \
+          \ \"result\": json.dumps(\"\".join(arg1))  # ⬅️ 確保字串可以放進 JSON 格式中\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: json轉換-文本糾正
+        type: code
+        variables:
+        - value_selector:
+          - '1748475066115'
+          - output
+          variable: arg1
+      height: 54
+      id: '17486109603930'
+      position:
+        x: 2733.926278606665
+        y: 476.4875038382993
+      positionAbsolute:
+        x: 2733.926278606665
+        y: 476.4875038382993
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-1544
+            key: ''
+            type: text
+            value: '{"module" : "translation" ,"user_input"  : {{#17486109603930.result#}}}'
+          type: json
+        desc: qwen:7b替對話腳本製作結論
+        headers: Content-Type:application/json
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 文本糾正
+        type: http-request
+        url: http://host.docker.internal:4000/manage
+        variables: []
+      height: 138
+      id: '17486109832600'
+      position:
+        x: 2712.8141520342983
+        y: 683.6502458296432
+      positionAbsolute:
+        x: 2712.8141520342983
+        y: 683.6502458296432
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    # 先解析 JSON 字串成 dict\n\
+          \    data = json.loads(arg1)\n    reply = data.get(\"reply\", \"\")\n  \
+          \  return {\n        \"result\": reply\n    }\n\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: json解析-文本糾正
+        type: code
+        variables:
+        - value_selector:
+          - '17486109832600'
+          - body
+          variable: arg1
+      height: 54
+      id: '17486110555250'
+      position:
+        x: 2712.8141520342983
+        y: 1004.4650215364148
+      positionAbsolute:
+        x: 2712.8141520342983
+        y: 1004.4650215364148
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '最後輸出
+
+          {{#17486110555250.result#}}'
+        desc: ''
+        selected: false
+        title: 直接回覆 6
+        type: answer
+        variables: []
+      height: 105
+      id: '1748611107877'
+      position:
+        x: 2733.926278606665
+        y: 1200.183949387617
+      positionAbsolute:
+        x: 2733.926278606665
+        y: 1200.183949387617
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
     viewport:
-      x: -1313.4735052177361
-      y: -177.07217529934007
+      x: -1512.3873866082627
+      y: -521.8569073442447
       zoom: 0.7578582832552012
