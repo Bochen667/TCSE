@@ -26,7 +26,7 @@ def analysis_module(module, code, user_input):
     "http://localhost:11434/v1/chat/completions",
     headers={"Content-Type": "application/json"},
     json={
-            "model": "deepseek-r1:7b",
+            "model": "codellama:13b",
             "messages": [ 
                 {
                     "role": "system",
@@ -207,6 +207,9 @@ def conclusion_module(module, code, user_input):
     response_json = json.dumps({"reply":reply}, ensure_ascii=False)
     return Response(response=response_json, status=200, content_type="application/json; charset=utf-8")
 
+
+
+# 如果腳本不理想可以嘗試使用tranlation模組進行改善
 def translation(module, code, user_input) :
     response = requests.post(
     "http://localhost:11434/v1/chat/completions",
@@ -217,7 +220,7 @@ def translation(module, code, user_input) :
                 {
                     "role": "system",
                     "content":  f'''
-                    你是一位專業翻譯員，請你在更動文章內容的情況下進行翻譯，並根據以下【對話內容】檢查所有對話內容確保是正體中文以及台灣用語。
+                    你是一位專業翻譯員，請你在不更動文章內容的情況下進行翻譯，並根據以下【對話內容】檢查所有對話內容確保是正體中文以及台灣用語。
                     '''
                 },
                 {
