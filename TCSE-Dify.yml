@@ -1,0 +1,1097 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 模型本地化-最終版
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/podcast_generator:0.0.3@49a334beb64974f9883aae18e6d77f48999363e219f09a638c6081c9f7079afd
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: 'Click the button to start generating the podcast after uploading
+      the file👇
+
+      And choose the corresponding podcast length, tone, as well as the language of
+      the podcast and the name of the host.'
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions:
+    - click me！
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1748345450053-source-1748345469919-target
+      selected: false
+      source: '1748345450053'
+      sourceHandle: source
+      target: '1748345469919'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 17483575287140-source-17484431847710-target
+      selected: false
+      source: '17483575287140'
+      sourceHandle: source
+      target: '17484431847710'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 17483576160590-source-17484432926460-target
+      selected: false
+      source: '17483576160590'
+      sourceHandle: source
+      target: '17484432926460'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 17484431847710-source-17483575722160-target
+      selected: false
+      source: '17484431847710'
+      sourceHandle: source
+      target: '17483575722160'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1748349008690-source-1748345508750-target
+      selected: false
+      source: '1748349008690'
+      sourceHandle: source
+      target: '1748345508750'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1748345508750-source-1748465439782-target
+      selected: false
+      source: '1748345508750'
+      sourceHandle: source
+      target: '1748465439782'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 17484679497620-source-17483575287140-target
+      selected: false
+      source: '17484679497620'
+      sourceHandle: source
+      target: '17483575287140'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 17484432926460-source-17483576050410-target
+      selected: false
+      source: '17484432926460'
+      sourceHandle: source
+      target: '17483576050410'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1748475597599-source-17483576160590-target
+      source: '1748475597599'
+      sourceHandle: source
+      target: '17483576160590'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: answer
+      id: 1748534631819-source-1748475149102-target
+      source: '1748534631819'
+      sourceHandle: source
+      target: '1748475149102'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: answer
+        targetType: code
+      id: 17483575722160-source-1748475597599-target
+      source: '17483575722160'
+      sourceHandle: source
+      target: '1748475597599'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: answer
+        targetType: template-transform
+      id: 17483576050410-source-1748475066115-target
+      source: '17483576050410'
+      sourceHandle: source
+      target: '1748475066115'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: answer
+        targetType: tool
+      id: 1748475118550-source-1748534631819-target
+      source: '1748475118550'
+      sourceHandle: source
+      target: '1748534631819'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 1748465439782-source-17483623890880-target
+      source: '1748465439782'
+      sourceHandle: source
+      target: '17483623890880'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: answer
+        targetType: code
+      id: 17483623890880-source-17484679497620-target
+      source: '17483623890880'
+      sourceHandle: source
+      target: '17484679497620'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1748345469919-source-1748349008690-target
+      source: '1748345469919'
+      sourceHandle: source
+      target: '1748349008690'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 開始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: file
+          max_length: 5
+          options: []
+          required: true
+          type: file-list
+          variable: file
+      height: 90
+      id: '1748345450053'
+      position:
+        x: 56.269245038193844
+        y: 273.2832855792742
+      positionAbsolute:
+        x: 56.269245038193844
+        y: 273.2832855792742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 'code文件：
+
+          {{#1748345469919.text#}}
+
+          '
+        desc: ''
+        selected: false
+        title: code文件
+        type: answer
+        variables: []
+      height: 105
+      id: answer
+      position:
+        x: 482.53108574957764
+        y: 552.0532799791707
+      positionAbsolute:
+        x: 482.53108574957764
+        y: 552.0532799791707
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_array_file: false
+        selected: false
+        title: code文件提取器
+        type: document-extractor
+        variable_selector:
+        - '1748345450053'
+        - file
+      height: 92
+      id: '1748345469919'
+      position:
+        x: 482.53108574957764
+        y: 273.2832855792742
+      positionAbsolute:
+        x: 482.53108574957764
+        y: 273.2832855792742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-1544
+            key: ''
+            type: text
+            value: '{"module" : "analysis" , "code"  : {{#1748349008690.result#}}}'
+          type: json
+        desc: 使用codellama:13b進行分析
+        headers: Content-Type:application/json
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: code分析
+        type: http-request
+        url: http://host.docker.internal:4000/manage
+        variables: []
+      height: 168
+      id: '1748345508750'
+      position:
+        x: 996.5885516896276
+        y: 490.4727660215886
+      positionAbsolute:
+        x: 996.5885516896276
+        y: 490.4727660215886
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    return {\n       \
+          \ \"result\": json.dumps(\"\".join(arg1))  # ⬅️ 確保字串可以放進 JSON 格式中\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: json轉換-code文件
+        type: code
+        variables:
+        - value_selector:
+          - '1748345469919'
+          - text
+          variable: arg1
+      height: 54
+      id: '1748349008690'
+      position:
+        x: 1001.394879078166
+        y: 273.2832855792742
+      positionAbsolute:
+        x: 1001.394879078166
+        y: 273.2832855792742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-1544
+            key: ''
+            type: text
+            value: '{"module" : "conversation" ,"user_input"  :{{#17484679497620.result#}},
+              "code":{{#1748349008690.result#}}}'
+          type: json
+        desc: 使用deepseek-r1:7b進行對話製作
+        headers: Content-Type:application/json
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 製作對話
+        type: http-request
+        url: http://host.docker.internal:4000/manage
+        variables: []
+      height: 168
+      id: '17483575287140'
+      position:
+        x: 1562.8506504070094
+        y: 490.4727660215886
+      positionAbsolute:
+        x: 1562.8506504070094
+        y: 490.4727660215886
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '製作對話模組：
+
+          {{#17484431847710.result#}}
+
+
+          '
+        desc: ''
+        selected: false
+        title: 製作對話
+        type: answer
+        variables: []
+      height: 121
+      id: '17483575722160'
+      position:
+        x: 1562.8506504070094
+        y: 989.88682749336
+      positionAbsolute:
+        x: 1562.8506504070094
+        y: 989.88682749336
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '結論模組：
+
+          {{#17484432926460.result#}}
+
+          '
+        desc: ''
+        selected: false
+        title: 結論
+        type: answer
+        variables: []
+      height: 121
+      id: '17483576050410'
+      position:
+        x: 2124.5446182492274
+        y: 989.88682749336
+      positionAbsolute:
+        x: 2124.5446182492274
+        y: 989.88682749336
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-1544
+            key: ''
+            type: text
+            value: '{"module" : "conclusion" ,"user_input"  : {{#1748475597599.result#}}}'
+          type: json
+        desc: qwen:7b替對話腳本製作結論
+        headers: Content-Type:application/json
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 結論
+        type: http-request
+        url: http://host.docker.internal:4000/manage
+        variables: []
+      height: 168
+      id: '17483576160590'
+      position:
+        x: 2124.5446182492274
+        y: 501.8742582236838
+      positionAbsolute:
+        x: 2124.5446182492274
+        y: 501.8742582236838
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: 王柏晟
+        desc: ''
+        height: 156
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"code文件分析","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"1.文件上傳","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"2.程式碼轉成合適的格式以便透過json傳遞給後端","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"3.回覆文件資料","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 305
+      height: 156
+      id: '1748359233558'
+      position:
+        x: 465.01864063169836
+        y: -33.979086822736114
+      positionAbsolute:
+        x: 465.01864063169836
+        y: -33.979086822736114
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 305
+    - data:
+        author: 王柏晟
+        desc: ''
+        height: 159
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"code分析","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"1.傳遞code資料給後端進行分析","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"2.處理程式碼格式以便透過json傳遞","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 288
+      height: 159
+      id: '1748359298032'
+      position:
+        x: 976.0466427833233
+        y: -33.979086822736114
+      positionAbsolute:
+        x: 976.0466427833233
+        y: -33.979086822736114
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 288
+    - data:
+        author: 王柏晟
+        desc: ''
+        height: 161
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"製作腳本","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"1.以分析資料為基礎製作procast腳本","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"2.處理程式碼格式以便透過json傳遞","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"3.處理程式碼格式以便能夠用json向後傳遞","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 309
+      height: 161
+      id: '1748359466506'
+      position:
+        x: 1506.9618233679926
+        y: -41.23638033198702
+      positionAbsolute:
+        x: 1506.9618233679926
+        y: -41.23638033198702
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 309
+    - data:
+        author: 王柏晟
+        desc: ''
+        height: 153
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"結論","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"1.以製作對話腳本為基礎做完整的總結","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 293
+      height: 153
+      id: '1748359618718'
+      position:
+        x: 2091.8877085038525
+        y: -41.23638033198702
+      positionAbsolute:
+        x: 2091.8877085038525
+        y: -41.23638033198702
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 293
+    - data:
+        answer: '
+
+          分析模組：
+
+          {{#1748465439782.result#}}
+
+
+          '
+        desc: ''
+        selected: false
+        title: 分析code (1)
+        type: answer
+        variables: []
+      height: 121
+      id: '17483623890880'
+      position:
+        x: 1001.394879078166
+        y: 989.88682749336
+      positionAbsolute:
+        x: 1001.394879078166
+        y: 989.88682749336
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    # 先解析 JSON 字串成 dict\n\
+          \    data = json.loads(arg1)\n    reply = data.get(\"reply\", \"\")\n  \
+          \  \n    \n    return {\n        \"result\": reply\n    }\n\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: json解析-製作對話
+        type: code
+        variables:
+        - value_selector:
+          - '17483575287140'
+          - body
+          variable: arg1
+      height: 54
+      id: '17484431847710'
+      position:
+        x: 1562.8506504070094
+        y: 798.212061281556
+      positionAbsolute:
+        x: 1562.8506504070094
+        y: 798.212061281556
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    # 先解析 JSON 字串成 dict\n\
+          \    data = json.loads(arg1)\n    reply = data.get(\"reply\", \"\")\n  \
+          \  return {\n        \"result\": reply\n    }\n\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: json解析-結論
+        type: code
+        variables:
+        - value_selector:
+          - '17483576160590'
+          - body
+          variable: arg1
+      height: 54
+      id: '17484432926460'
+      position:
+        x: 2134.500559919875
+        y: 793.6008970799422
+      positionAbsolute:
+        x: 2134.500559919875
+        y: 793.6008970799422
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    # 先解析 JSON 字串成 dict\n\
+          \    data = json.loads(arg1)\n    reply = data.get(\"reply\", \"\")\n  \
+          \  return {\n        \"result\": reply\n    }\n\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: json解析-code分析
+        type: code
+        variables:
+        - value_selector:
+          - '1748345508750'
+          - body
+          variable: arg1
+      height: 54
+      id: '1748465439782'
+      position:
+        x: 996.5885516896276
+        y: 793.6008970799422
+      positionAbsolute:
+        x: 996.5885516896276
+        y: 793.6008970799422
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    return {\n       \
+          \ \"result\": json.dumps(\"\".join(arg1))  # ⬅️ 確保字串可以放進 JSON 格式中\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: JSON轉換-code分析
+        type: code
+        variables:
+        - value_selector:
+          - '1748465439782'
+          - result
+          variable: arg1
+      height: 54
+      id: '17484679497620'
+      position:
+        x: 1562.8506504070094
+        y: 281.2003330439115
+      positionAbsolute:
+        x: 1562.8506504070094
+        y: 281.2003330439115
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: "{{ arg1 }}\r\n{{ arg2 }}"
+        title: 模板轉換
+        type: template-transform
+        variables:
+        - value_selector:
+          - '17484431847710'
+          - result
+          variable: arg1
+        - value_selector:
+          - '17484432926460'
+          - result
+          variable: arg2
+      height: 54
+      id: '1748475066115'
+      position:
+        x: 2728.761881150039
+        y: 273.2832855792742
+      positionAbsolute:
+        x: 2728.761881150039
+        y: 273.2832855792742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: prodcast生成中...
+        desc: ''
+        selected: false
+        title: 直接回覆 5
+        type: answer
+        variables: []
+      height: 102
+      id: '1748475118550'
+      position:
+        x: 2735.359420703903
+        y: 552.0532799791707
+      positionAbsolute:
+        x: 2735.359420703903
+        y: 552.0532799791707
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1748534631819.files#}}'
+        desc: ''
+        selected: false
+        title: 直接回覆 6
+        type: answer
+        variables: []
+      height: 105
+      id: '1748475149102'
+      position:
+        x: 2735.359420703903
+        y: 1022.0503814332769
+      positionAbsolute:
+        x: 2735.359420703903
+        y: 1022.0503814332769
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "\nimport json\ndef main(arg1: str) -> dict:\n    return {\n       \
+          \ \"result\": json.dumps(\"\".join(arg1))  # ⬅️ 確保字串可以放進 JSON 格式中\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: json轉換-製作對話
+        type: code
+        variables:
+        - value_selector:
+          - '17484431847710'
+          - result
+          variable: arg1
+      height: 54
+      id: '1748475597599'
+      position:
+        x: 2124.5446182492274
+        y: 273.2832855792742
+      positionAbsolute:
+        x: 2124.5446182492274
+        y: 273.2832855792742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: false
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: A string containing alternating lines for two hosts, separated
+              by newline characters.
+            ja_JP: A string containing alternating lines for two hosts, separated
+              by newline characters.
+            pt_BR: A string containing alternating lines for two hosts, separated
+              by newline characters.
+            zh_Hans: 包含两位主持人交替台词的字符串，每行用换行符分隔。
+          label:
+            en_US: Podcast Script
+            ja_JP: Podcast Script
+            pt_BR: Podcast Script
+            zh_Hans: 播客脚本
+          llm_description: A string representing the script, with alternating lines
+            for two hosts separated by newline characters.
+          max: null
+          min: null
+          name: script
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: The voice for the first host.
+            ja_JP: The voice for the first host.
+            pt_BR: The voice for the first host.
+            zh_Hans: 第一位主持人的音色。
+          label:
+            en_US: Host 1 Voice
+            ja_JP: Host 1 Voice
+            pt_BR: Host 1 Voice
+            zh_Hans: 主持人1 音色
+          llm_description: The voice identifier for the first host's voice.
+          max: null
+          min: null
+          name: host1_voice
+          options:
+          - label:
+              en_US: Alloy
+              ja_JP: Alloy
+              pt_BR: Alloy
+              zh_Hans: Alloy
+            value: alloy
+          - label:
+              en_US: Echo
+              ja_JP: Echo
+              pt_BR: Echo
+              zh_Hans: Echo
+            value: echo
+          - label:
+              en_US: Fable
+              ja_JP: Fable
+              pt_BR: Fable
+              zh_Hans: Fable
+            value: fable
+          - label:
+              en_US: Onyx
+              ja_JP: Onyx
+              pt_BR: Onyx
+              zh_Hans: Onyx
+            value: onyx
+          - label:
+              en_US: Nova
+              ja_JP: Nova
+              pt_BR: Nova
+              zh_Hans: Nova
+            value: nova
+          - label:
+              en_US: Shimmer
+              ja_JP: Shimmer
+              pt_BR: Shimmer
+              zh_Hans: Shimmer
+            value: shimmer
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: The voice for the second host.
+            ja_JP: The voice for the second host.
+            pt_BR: The voice for the second host.
+            zh_Hans: 第二位主持人的音色。
+          label:
+            en_US: Host 2 Voice
+            ja_JP: Host 2 Voice
+            pt_BR: Host 2 Voice
+            zh_Hans: 主持人2 音色
+          llm_description: The voice identifier for the second host's voice.
+          max: null
+          min: null
+          name: host2_voice
+          options:
+          - label:
+              en_US: Alloy
+              ja_JP: Alloy
+              pt_BR: Alloy
+              zh_Hans: Alloy
+            value: alloy
+          - label:
+              en_US: Echo
+              ja_JP: Echo
+              pt_BR: Echo
+              zh_Hans: Echo
+            value: echo
+          - label:
+              en_US: Fable
+              ja_JP: Fable
+              pt_BR: Fable
+              zh_Hans: Fable
+            value: fable
+          - label:
+              en_US: Onyx
+              ja_JP: Onyx
+              pt_BR: Onyx
+              zh_Hans: Onyx
+            value: onyx
+          - label:
+              en_US: Nova
+              ja_JP: Nova
+              pt_BR: Nova
+              zh_Hans: Nova
+            value: nova
+          - label:
+              en_US: Shimmer
+              ja_JP: Shimmer
+              pt_BR: Shimmer
+              zh_Hans: Shimmer
+            value: shimmer
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          host1_voice: ''
+          host2_voice: ''
+          script: ''
+        provider_id: langgenius/podcast_generator/podcast_generator
+        provider_name: langgenius/podcast_generator/podcast_generator
+        provider_type: builtin
+        selected: false
+        title: Podcast Audio Generator
+        tool_configurations:
+          host1_voice: alloy
+          host2_voice: nova
+        tool_description: Generate a podcast audio file from a script with two alternating
+          voices using OpenAI's TTS service.
+        tool_label: Podcast Audio Generator
+        tool_name: podcast_audio_generator
+        tool_parameters:
+          script:
+            type: mixed
+            value: '{{#1748475066115.output#}}'
+        type: tool
+      height: 116
+      id: '1748534631819'
+      position:
+        x: 2735.359420703903
+        y: 793.6008970799422
+      positionAbsolute:
+        x: 2735.359420703903
+        y: 793.6008970799422
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: 王柏晟
+        desc: ''
+        height: 147
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"語音模組","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"1.整合對話腳本+結論","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"2.透過prodcast
+          generator外掛呼叫opentts產生prdcast語音檔","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 295
+      height: 147
+      id: '1748535128074'
+      position:
+        x: 2673.9392069654036
+        y: -46.0048638663274
+      positionAbsolute:
+        x: 2673.9392069654036
+        y: -46.0048638663274
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 295
+    viewport:
+      x: -1313.4735052177361
+      y: -177.07217529934007
+      zoom: 0.7578582832552012
