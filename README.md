@@ -1,4 +1,4 @@
-TCSE-Dify是透過Dify平台開發的前端，匯入TCSE-Dify.yml即可<br>
+TCSE-Dify是透過Dify平台開發的前端，在Dify本地或Dify Cloud 匯入TCSE-Dify.yml即可<br>
 manage.py是後端程式，用於處理Dify平台的http response並回傳LLM回復<br>
 chromabd_helper.py用於RAG，改進LLM回復能力，強化回復的準確度<br>
 ※如果要使用本地端ollam模型請務必要使用Dify本地端匯入TCSE-Dify.yml在執行<br>
@@ -7,5 +7,5 @@ chromabd_helper.py用於RAG，改進LLM回復能力，強化回復的準確度<b
 1.CODE分析模組<br>
 2.腳本製作模組<br>
 3.結論製作模組<br>
-4.TTS模組<br>
+4.TTS模組:使用openAI whisper模組將腳本轉換成prodcast語音檔<br>
 
