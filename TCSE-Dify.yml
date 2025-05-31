@@ -265,6 +265,17 @@ workflow:
       targetHandle: target
       type: custom
       zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: answer
+        targetType: answer
+      id: 1748611107877-source-1748475118550-target
+      source: '1748611107877'
+      sourceHandle: source
+      target: '1748475118550'
+      targetHandle: target
+      type: custom
+      zIndex: 0
     nodes:
     - data:
         desc: ''
@@ -341,14 +352,17 @@ workflow:
         selected: false
         ssl_verify: true
         timeout:
+          connect: 300
           max_connect_timeout: 0
           max_read_timeout: 0
           max_write_timeout: 0
+          read: 600
+          write: 600
         title: code分析
         type: http-request
         url: http://host.docker.internal:4000/manage
         variables: []
-      height: 138
+      height: 168
       id: '1748345508750'
       position:
         x: 996.5885516896276
@@ -418,13 +432,13 @@ workflow:
           max_connect_timeout: 0
           max_read_timeout: 0
           max_write_timeout: 0
-          read: 300
-          write: 299
+          read: 600
+          write: 600
         title: 製作對話
         type: http-request
         url: http://host.docker.internal:4000/manage
         variables: []
-      height: 138
+      height: 168
       id: '17483575287140'
       position:
         x: 1562.8506504070094
@@ -459,21 +473,24 @@ workflow:
         selected: false
         ssl_verify: true
         timeout:
+          connect: 300
           max_connect_timeout: 0
           max_read_timeout: 0
           max_write_timeout: 0
+          read: 600
+          write: 600
         title: 結論
         type: http-request
         url: http://host.docker.internal:4000/manage
         variables: []
-      height: 138
+      height: 168
       id: '17483576160590'
       position:
-        x: 2124.5446182492274
-        y: 501.8742582236838
+        x: 2105.3925058567124
+        y: 490.4727660215886
       positionAbsolute:
-        x: 2124.5446182492274
-        y: 501.8742582236838
+        x: 2105.3925058567124
+        y: 490.4727660215886
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -627,10 +644,10 @@ workflow:
       height: 54
       id: '17484432926460'
       position:
-        x: 2134.500559919875
+        x: 2105.3925058567124
         y: 793.6008970799422
       positionAbsolute:
-        x: 2134.500559919875
+        x: 2105.3925058567124
         y: 793.6008970799422
       selected: false
       sourcePosition: right
@@ -701,7 +718,7 @@ workflow:
     - data:
         desc: ''
         selected: false
-        template: "{{ arg1 }}\r\n{{ arg2 }}"
+        template: "{{ \"請去掉提示詞內容，保留有關腳本對話內容以及翻譯成繁體中文\"+arg1 }}\r\n{{ arg2 }}"
         title: 模板轉換
         type: template-transform
         variables:
@@ -716,10 +733,10 @@ workflow:
       height: 54
       id: '1748475066115'
       position:
-        x: 2728.761881150039
+        x: 2704.7732635493194
         y: 273.2832855792742
       positionAbsolute:
-        x: 2728.761881150039
+        x: 2704.7732635493194
         y: 273.2832855792742
       selected: false
       sourcePosition: right
@@ -727,7 +744,9 @@ workflow:
       type: custom
       width: 244
     - data:
-        answer: prodcast生成中...
+        answer: 'prodcast生成中...
+
+          '
         desc: ''
         selected: false
         title: 直接回覆 5
@@ -736,12 +755,12 @@ workflow:
       height: 102
       id: '1748475118550'
       position:
-        x: 3238.292648213624
-        y: 265.3278884421704
+        x: 3233.697854793636
+        y: 281.2003330439115
       positionAbsolute:
-        x: 3238.292648213624
-        y: 265.3278884421704
-      selected: false
+        x: 3233.697854793636
+        y: 281.2003330439115
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -786,10 +805,10 @@ workflow:
       height: 54
       id: '1748475597599'
       position:
-        x: 2124.5446182492274
+        x: 2129.767921629004
         y: 273.2832855792742
       positionAbsolute:
-        x: 2124.5446182492274
+        x: 2129.767921629004
         y: 273.2832855792742
       selected: false
       sourcePosition: right
@@ -974,10 +993,10 @@ workflow:
       id: '1748534631819'
       position:
         x: 3233.697854793636
-        y: 496.8437449251005
+        y: 490.4727660215886
       positionAbsolute:
         x: 3233.697854793636
-        y: 496.8437449251005
+        y: 490.4727660215886
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -1028,11 +1047,11 @@ workflow:
       height: 54
       id: '17486109603930'
       position:
-        x: 2733.926278606665
-        y: 476.4875038382993
+        x: 2704.7732635493194
+        y: 382.4096293039922
       positionAbsolute:
-        x: 2733.926278606665
-        y: 476.4875038382993
+        x: 2704.7732635493194
+        y: 382.4096293039922
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -1067,14 +1086,14 @@ workflow:
         type: http-request
         url: http://host.docker.internal:4000/manage
         variables: []
-      height: 138
+      height: 168
       id: '17486109832600'
       position:
-        x: 2712.8141520342983
-        y: 683.6502458296432
+        x: 2699.029771774334
+        y: 490.4727660215886
       positionAbsolute:
-        x: 2712.8141520342983
-        y: 683.6502458296432
+        x: 2699.029771774334
+        y: 490.4727660215886
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -1102,19 +1121,17 @@ workflow:
       id: '17486110555250'
       position:
         x: 2712.8141520342983
-        y: 1004.4650215364148
+        y: 793.6008970799422
       positionAbsolute:
         x: 2712.8141520342983
-        y: 1004.4650215364148
+        y: 793.6008970799422
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     - data:
-        answer: '最後輸出
-
-          {{#17486110555250.result#}}'
+        answer: '{{#1748475066115.output#}}'
         desc: ''
         selected: false
         title: 直接回覆 6
@@ -1123,17 +1140,17 @@ workflow:
       height: 105
       id: '1748611107877'
       position:
-        x: 2733.926278606665
-        y: 1200.183949387617
+        x: 2699.029771774334
+        y: 981.4044028294416
       positionAbsolute:
-        x: 2733.926278606665
-        y: 1200.183949387617
+        x: 2699.029771774334
+        y: 981.4044028294416
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     viewport:
-      x: -1512.3873866082627
-      y: -521.8569073442447
+      x: -853.4381407901533
+      y: -57.24638004845485
       zoom: 0.7578582832552012
