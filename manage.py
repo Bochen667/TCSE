@@ -209,7 +209,7 @@ def conclusion_module(module, code, user_input):
 
 
 
-# 如果腳本不理想可以嘗試使用tranlation模組進行改善
+# Demo使用Grok進行腳本修飾，如果想要改成本地ollama模型進行可以呼叫translation module
 def translation(module, code, user_input) :
     response = requests.post(
     "http://localhost:11434/v1/chat/completions",
