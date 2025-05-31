@@ -9,6 +9,10 @@ dependencies:
 - current_identifier: null
   type: marketplace
   value:
+    marketplace_plugin_unique_identifier: langgenius/x:0.0.5@544730d43b468f2b7dd8b8074d8be02fbcc881c46c1ca44157740c5152ee31d9
+- current_identifier: null
+  type: marketplace
+  value:
     marketplace_plugin_unique_identifier: langgenius/podcast_generator:0.0.3@49a334beb64974f9883aae18e6d77f48999363e219f09a638c6081c9f7079afd
 kind: app
 version: 0.3.0
@@ -189,51 +193,6 @@ workflow:
       zIndex: 0
     - data:
         isInLoop: false
-        sourceType: template-transform
-        targetType: code
-      id: 1748475066115-source-17486109603930-target
-      source: '1748475066115'
-      sourceHandle: source
-      target: '17486109603930'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: code
-        targetType: http-request
-      id: 17486109603930-source-17486109832600-target
-      source: '17486109603930'
-      sourceHandle: source
-      target: '17486109832600'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: http-request
-        targetType: code
-      id: 17486109832600-source-17486110555250-target
-      source: '17486109832600'
-      sourceHandle: source
-      target: '17486110555250'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInIteration: false
-        isInLoop: false
-        sourceType: code
-        targetType: answer
-      id: 17486110555250-source-1748611107877-target
-      source: '17486110555250'
-      sourceHandle: source
-      target: '1748611107877'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
         sourceType: code
         targetType: code
       id: 1748465439782-source-17484679497620-target
@@ -273,6 +232,29 @@ workflow:
       source: '1748611107877'
       sourceHandle: source
       target: '1748475118550'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1748475066115-source-1748707981287-target
+      source: '1748475066115'
+      sourceHandle: source
+      target: '1748707981287'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1748707981287-source-1748611107877-target
+      source: '1748707981287'
+      sourceHandle: source
+      target: '1748611107877'
       targetHandle: target
       type: custom
       zIndex: 0
@@ -760,7 +742,7 @@ workflow:
       positionAbsolute:
         x: 3233.697854793636
         y: 281.2003330439115
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -987,7 +969,7 @@ workflow:
         tool_parameters:
           script:
             type: mixed
-            value: '{{#1748475066115.output#}}'
+            value: '{{#1748707981287.text#}}'
         type: tool
       height: 116
       id: '1748534631819'
@@ -1028,110 +1010,9 @@ workflow:
       type: custom-note
       width: 295
     - data:
-        code: "\nimport json\ndef main(arg1: str) -> dict:\n    return {\n       \
-          \ \"result\": json.dumps(\"\".join(arg1))  # ⬅️ 確保字串可以放進 JSON 格式中\n    }"
-        code_language: python3
-        desc: ''
-        outputs:
-          result:
-            children: null
-            type: string
-        selected: false
-        title: json轉換-文本糾正
-        type: code
-        variables:
-        - value_selector:
-          - '1748475066115'
-          - output
-          variable: arg1
-      height: 54
-      id: '17486109603930'
-      position:
-        x: 2704.7732635493194
-        y: 382.4096293039922
-      positionAbsolute:
-        x: 2704.7732635493194
-        y: 382.4096293039922
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 244
-    - data:
-        authorization:
-          config: null
-          type: no-auth
-        body:
-          data:
-          - id: key-value-1544
-            key: ''
-            type: text
-            value: '{"module" : "translation" ,"user_input"  : {{#17486109603930.result#}}}'
-          type: json
-        desc: qwen:7b替對話腳本製作結論
-        headers: Content-Type:application/json
-        method: post
-        params: ''
-        retry_config:
-          max_retries: 3
-          retry_enabled: true
-          retry_interval: 100
-        selected: false
-        ssl_verify: true
-        timeout:
-          max_connect_timeout: 0
-          max_read_timeout: 0
-          max_write_timeout: 0
-        title: 文本糾正
-        type: http-request
-        url: http://host.docker.internal:4000/manage
-        variables: []
-      height: 168
-      id: '17486109832600'
-      position:
-        x: 2699.029771774334
-        y: 490.4727660215886
-      positionAbsolute:
-        x: 2699.029771774334
-        y: 490.4727660215886
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 244
-    - data:
-        code: "import json\n\ndef main(arg1: str) -> dict:\n    # 先解析 JSON 字串成 dict\n\
-          \    data = json.loads(arg1)\n    reply = data.get(\"reply\", \"\")\n  \
-          \  return {\n        \"result\": reply\n    }\n\n"
-        code_language: python3
-        desc: ''
-        outputs:
-          result:
-            children: null
-            type: string
-        selected: false
-        title: json解析-文本糾正
-        type: code
-        variables:
-        - value_selector:
-          - '17486109832600'
-          - body
-          variable: arg1
-      height: 54
-      id: '17486110555250'
-      position:
-        x: 2712.8141520342983
-        y: 793.6008970799422
-      positionAbsolute:
-        x: 2712.8141520342983
-        y: 793.6008970799422
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 244
-    - data:
-        answer: '{{#1748475066115.output#}}'
+        answer: '{{#1748707981287.text#}}
+
+          '
         desc: ''
         selected: false
         title: 直接回覆 6
@@ -1140,17 +1021,57 @@ workflow:
       height: 105
       id: '1748611107877'
       position:
-        x: 2699.029771774334
-        y: 981.4044028294416
+        x: 2721.120539000829
+        y: 798.212061281556
       positionAbsolute:
-        x: 2699.029771774334
-        y: 981.4044028294416
+        x: 2721.120539000829
+        y: 798.212061281556
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1748475066115'
+          - output
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: grok-3-beta
+          provider: langgenius/x/x
+        prompt_template:
+        - role: system
+          text: "[內容] {{#1748475066115.output#}} \n你是一位 podcast 助理編輯，請根據以下規則，自動修改並輸出符合格式的\
+            \ podcast 腳本。請不要提供任何說明或多餘文字，只輸出修改後的腳本對話內容。\n修正規則如下：\n1.對話必須以主持人開場，之後主持人與來賓交替發言（一次一行）。\n\
+            2.移除每一行前的說話者名字或標記（如「主持人：」、「來賓：」）。\n3.所有內容需使用正體中文，並符合台灣用語。\n4.僅調整格式與用語，使其更自然或符合口語化表達，不得更改原意或加入新內容。"
+        - role: user
+          text: '請根據內容進行腳本修正
+
+            [內容]:{{#1748475066115.output#}}'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1748707981287'
+      position:
+        x: 2721.120539000829
+        y: 490.4727660215886
+      positionAbsolute:
+        x: 2721.120539000829
+        y: 490.4727660215886
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     viewport:
-      x: -853.4381407901533
-      y: -57.24638004845485
+      x: -1836.1434153570663
+      y: -196.72457332169074
       zoom: 0.7578582832552012
