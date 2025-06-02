@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# 安裝 SQLite 3.45.2（你也可以換其他版本 >= 3.35）
+# 安裝 SQLite 3.45.2（也可以換其他版本 >= 3.35）
 RUN curl -O https://www.sqlite.org/2024/sqlite-autoconf-3450200.tar.gz && \
     tar xzf sqlite-autoconf-3450200.tar.gz && \
     cd sqlite-autoconf-3450200 && \
