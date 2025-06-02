@@ -4,11 +4,12 @@ from flask import Response
 import requests
 import json
 
+chroadb_helper_api = "http://service-b:5001/rag"
 
 def analysis_module(module, code, user_input):
     
 
-    chromadb_response =  requests.post("http://localhost:5001/rag",  json={"query": code,"module":"analysis"}   )      
+    chromadb_response =  requests.post(chroadb_helper_api,  json={"query": code,"module":"analysis"}   )      
     # 解析回傳結果
 
     if chromadb_response.status_code == 200:
@@ -23,7 +24,7 @@ def analysis_module(module, code, user_input):
 
 
     response = requests.post(
-    "http://localhost:11434/v1/chat/completions",
+    "http://host.docker.internal:11434/v1/chat/completions",
     headers={"Content-Type": "application/json"},
     json={
             "model": "codellama:13b",
@@ -70,7 +71,7 @@ def conversation_module(module, code, user_input):
     # code = data.get("code","")
  
 
-    chromadb_response =  requests.post("http://localhost:5001/rag",json={"query": user_input,"module":"conversation"})     # 用 JSON 格式傳送資料
+    chromadb_response =  requests.post(chroadb_helper_api,json={"query": user_input,"module":"conversation"})     # 用 JSON 格式傳送資料
     
     # 解析回傳結果
     if chromadb_response.status_code == 200:
@@ -85,7 +86,7 @@ def conversation_module(module, code, user_input):
     # print(user_input)
 
     response = requests.post(
-    "http://localhost:11434/v1/chat/completions",
+    "http://host.docker.internal:11434/v1/chat/completions",
     headers={"Content-Type": "application/json"},
     json={
             "model": "deepseek-r1:7b",
@@ -151,7 +152,7 @@ def conversation_module(module, code, user_input):
 def conclusion_module(module, code, user_input):
   
 
-    chromadb_response =  requests.post("http://localhost:5001/rag", json={"query": user_input,"module":"conclusion"})       # 用 JSON 格式傳送資料
+    chromadb_response =  requests.post(chroadb_helper_api, json={"query": user_input,"module":"conclusion"})       # 用 JSON 格式傳送資料
         
     # 解析回傳結果
     if chromadb_response.status_code == 200:
@@ -165,7 +166,7 @@ def conclusion_module(module, code, user_input):
     RAG_data = data.get('context', '')
 
     response = requests.post(
-    "http://localhost:11434/v1/chat/completions",
+    "http://host.docker.internal:11434/v1/chat/completions",
     headers={"Content-Type": "application/json"},
     json={
             "model": "qwen:7b",
@@ -212,7 +213,7 @@ def conclusion_module(module, code, user_input):
 # Demo使用Grok進行腳本修飾，如果想要改成本地ollama模型進行可以呼叫translation module
 def translation(module, code, user_input) :
     response = requests.post(
-    "http://localhost:11434/v1/chat/completions",
+    "http://host.docker.internal:11434/v1/chat/completions",
     headers={"Content-Type": "application/json"},
     json={
             "model": "llama3:8b",
@@ -273,4 +274,4 @@ def manage():
         return jsonify({"error": "Invalid module"}), 400
 
 if __name__ == "__main__":
-    app.run(debug=True, port=4000)
+    app.run(host="0.0.0.0",debug=True, port=4000)

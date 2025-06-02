@@ -225,17 +225,6 @@ workflow:
       type: custom
       zIndex: 0
     - data:
-        isInLoop: false
-        sourceType: answer
-        targetType: answer
-      id: 1748611107877-source-1748475118550-target
-      source: '1748611107877'
-      sourceHandle: source
-      target: '1748475118550'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
         isInIteration: false
         isInLoop: false
         sourceType: template-transform
@@ -255,6 +244,17 @@ workflow:
       source: '1748707981287'
       sourceHandle: source
       target: '1748611107877'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: answer
+        targetType: answer
+      id: 1748611107877-source-1748475118550-target
+      source: '1748611107877'
+      sourceHandle: source
+      target: '1748475118550'
       targetHandle: target
       type: custom
       zIndex: 0
@@ -280,10 +280,10 @@ workflow:
       height: 90
       id: '1748345450053'
       position:
-        x: 56.269245038193844
+        x: 286.0089160376002
         y: 273.2832855792742
       positionAbsolute:
-        x: 56.269245038193844
+        x: 286.0089160376002
         y: 273.2832855792742
       selected: false
       sourcePosition: right
@@ -302,10 +302,10 @@ workflow:
       height: 92
       id: '1748345469919'
       position:
-        x: 482.53108574957764
+        x: 579.0217475693285
         y: 273.2832855792742
       positionAbsolute:
-        x: 482.53108574957764
+        x: 579.0217475693285
         y: 273.2832855792742
       selected: false
       sourcePosition: right
@@ -352,7 +352,7 @@ workflow:
       positionAbsolute:
         x: 996.5885516896276
         y: 490.4727660215886
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -999,10 +999,10 @@ workflow:
       height: 147
       id: '1748535128074'
       position:
-        x: 2680.8313970953855
+        x: 2694.7004768358975
         y: -33.979086822736114
       positionAbsolute:
-        x: 2680.8313970953855
+        x: 2694.7004768358975
         y: -33.979086822736114
       selected: false
       sourcePosition: right
@@ -1021,12 +1021,12 @@ workflow:
       height: 105
       id: '1748611107877'
       position:
-        x: 2721.120539000829
-        y: 798.212061281556
+        x: 2694.7004768358975
+        y: 787.8737760865828
       positionAbsolute:
-        x: 2721.120539000829
-        y: 798.212061281556
-      selected: true
+        x: 2694.7004768358975
+        y: 787.8737760865828
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -1044,11 +1044,13 @@ workflow:
           name: grok-3-beta
           provider: langgenius/x/x
         prompt_template:
-        - role: system
+        - id: d47998a4-d8a6-40ba-9da9-46f628c33037
+          role: system
           text: "[內容] {{#1748475066115.output#}} \n你是一位 podcast 助理編輯，請根據以下規則，自動修改並輸出符合格式的\
             \ podcast 腳本。請不要提供任何說明或多餘文字，只輸出修改後的腳本對話內容。\n修正規則如下：\n1.對話必須以主持人開場，之後主持人與來賓交替發言（一次一行）。\n\
             2.移除每一行前的說話者名字或標記（如「主持人：」、「來賓：」）。\n3.所有內容需使用正體中文，並符合台灣用語。\n4.僅調整格式與用語，使其更自然或符合口語化表達，不得更改原意或加入新內容。"
-        - role: user
+        - id: 2016be8b-6788-4674-ac63-111e7868ebd8
+          role: user
           text: '請根據內容進行腳本修正
 
             [內容]:{{#1748475066115.output#}}'
@@ -1061,17 +1063,17 @@ workflow:
       height: 90
       id: '1748707981287'
       position:
-        x: 2721.120539000829
-        y: 490.4727660215886
+        x: 2711.930952160853
+        y: 507.7032413465441
       positionAbsolute:
-        x: 2721.120539000829
-        y: 490.4727660215886
+        x: 2711.930952160853
+        y: 507.7032413465441
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     viewport:
-      x: -1836.1434153570663
-      y: -196.72457332169074
+      x: -472.73159945242287
+      y: -7.8689442339880316
       zoom: 0.7578582832552012
