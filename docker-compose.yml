@@ -4,7 +4,7 @@ services:
     build: .
     command: python manage.py 
     ports:
-      - "4000:4000"  # 依你的 a.py 設定決定是否開 port
+      - "4000:4000"  
     restart: unless-stopped
     depends_on:
       - service-b
@@ -13,5 +13,5 @@ services:
     build: .
     command: python chromadb_helper.py
     ports:
-      - "5001:5001"  # 如果 b.py 也有 web 服務，可改這個
+      - "5001:5001" 
     restart: unless-stopped
